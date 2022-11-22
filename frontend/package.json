@@ -17,6 +17,7 @@
         "react": "^17.0.2",
         "react-chat-elements": "^12.0.5",
         "react-dom": "^17.0.2",
+        "react-helmet": "^6.1.0",
         "react-icons": "^4.6.0",
         "react-loader-spinner": "^5.3.4",
         "react-query": "^3.39.2",
@@ -24,16 +25,14 @@
         "react-scripts": "5.0.1",
         "react-tooltip": "^4.4.3",
         "socket.io-client": "^4.5.3",
-        "source-map-explorer": "^2.5.3",
         "web-vitals": "^2.1.4",
         "yup": "^0.32.11"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build && rm -rf ../backend/static/build && cp -R ./build ../backend/static/build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "analyze": "npm run build && source-map-explorer 'build/static/js/*.js'",
+        "start": "react-app-rewired start",
+        "build": "react-app-rewired build && rm -rf ../backend/static/build && cp -R ./build ../backend/static/build",
+        "test": "react-app-rewired test",
+        "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 react-app-rewired build",
         "format": "npx prettier --write ."
     },
     "eslintConfig": {
@@ -56,8 +55,11 @@
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",
+        "compression-webpack-plugin": "^10.0.0",
+        "cross-env": "^7.0.3",
         "postcss": "^8.4.18",
         "prettier": "2.7.1",
+        "react-app-rewired": "^2.2.1",
         "tailwindcss": "^3.2.1",
         "webpack-bundle-analyzer": "^4.7.0"
     }

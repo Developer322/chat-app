@@ -1,10 +1,14 @@
 import { useRouteError, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const ErrorPage = () => {
     const error = useRouteError();
 
     return (
         <main className="h-screen w-full flex flex-col justify-center items-center bg-gradient-to-bl from-green-100 to-green-300">
+            <Helmet>
+                <title>Error</title>
+            </Helmet>
             <h1 className="text-9xl font-extrabold text-white tracking-widest">
                 {error?.status || '404'}
             </h1>

@@ -12,10 +12,6 @@ const config = require('./utils/config.js');
 const MongoStore = require('connect-mongo');
 const path = require('path');
 
-//github
-//heroku
-//readme
-
 app.use(express.json({ limit: '10kb' }));
 
 const mongoUrl = config.MONGODB_URI;

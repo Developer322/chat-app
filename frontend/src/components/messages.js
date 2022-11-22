@@ -4,6 +4,7 @@ import Input from 'react-chat-elements/build/Input/Input';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 import { Bars } from 'react-loader-spinner';
+import { Helmet } from 'react-helmet';
 
 const MessageList = React.lazy(() =>
     import('react-chat-elements/build/MessageList/MessageList')
@@ -117,6 +118,9 @@ const MessagesBlock = ({ chatId, username }) => {
 
     return chatId?.length > 0 ? (
         <div className="flex flex-col h-screen grow">
+            <Helmet>
+                <title>Chat</title>
+            </Helmet>
             <Suspense
                 fallback={
                     <Bars
@@ -125,7 +129,11 @@ const MessagesBlock = ({ chatId, username }) => {
                         color="#4fa94d"
                         ariaLabel="bars-loading"
                         wrapperStyle={{
-                            margin: '50px'
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: '100%',
+                            height: '100vh'
                         }}
                         visible={true}
                     />

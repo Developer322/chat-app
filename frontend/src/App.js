@@ -26,6 +26,16 @@ const App = () => {
         chatId: ''
     };
 
+    const setChatIdAction = chatId => ({
+        type: 'SET_CHATID',
+        payload: { chatId }
+    })
+
+    const setUsernameAction = username => ({
+        type: 'SET_USERNAME',
+        payload: { username }
+    })
+
     const [state, dispatch] = useReducer(reducer, initialValues);
 
     const router = createBrowserRouter([
@@ -34,11 +44,8 @@ const App = () => {
             element: (
                 <div className="w-full h-screen flex bg-gradient-to-bl from-green-100 to-green-300">
                     <Chat
-                        setChatId={(chatId) =>
-                            dispatch({
-                                type: 'SET_CHATID',
-                                payload: { chatId }
-                            })
+                        setChatId={ (chatId) =>
+                            dispatch(setChatIdAction(chatId))
                         }
                     />
                     <MessageList
@@ -54,10 +61,7 @@ const App = () => {
             element: (
                 <SignIn
                     setUsername={(username) =>
-                        dispatch({
-                            type: 'SET_USERNAME',
-                            payload: { username }
-                        })
+                        dispatch(setUsernameAction(username))
                     }
                 />
             ),

@@ -73,7 +73,11 @@ const ChatListElement = ({ setChatId }) => {
                             color="#4fa94d"
                             ariaLabel="bars-loading"
                             wrapperStyle={{
-                                margin: '50px'
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                width: '100%',
+                                height: '100vh'
                             }}
                             visible={true}
                         />
@@ -91,7 +95,11 @@ const ChatListElement = ({ setChatId }) => {
                                             color="#4fa94d"
                                             ariaLabel="bars-loading"
                                             wrapperStyle={{
-                                                margin: '50px'
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                width: '100%',
+                                                height: '100vh'
                                             }}
                                             visible={true}
                                         />

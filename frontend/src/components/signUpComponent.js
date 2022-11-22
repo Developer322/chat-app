@@ -9,6 +9,7 @@ import { FaGithub } from 'react-icons/fa/index.js';
 import { AiOutlineUser } from 'react-icons/ai/index.js';
 import { BiShield } from 'react-icons/bi/index.js';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const actionTypes = {
     SET_IS_SIGN_IN: 'SET_IS_SIGN_IN',
@@ -112,6 +113,9 @@ const SignIn = ({ setUsername }) => {
 
     return (
         <div className="w-full h-screen flex flex-col items-center justify-center animate-appearing">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div className="lg:w-1/4 md:w-1/3 w-3/5 px-6 flex flex-col grow justify-center items-center">
                 <h1 className="text-xl font-semibold mb-8">
                     {state.isSignIn ? 'Sign in' : 'Sign up'}
@@ -255,7 +259,7 @@ const InputComponent = ({ handleChange, value, inputProps, icon, error }) => {
                 id={`${inputProps.name}Tip`}
                 type="error"
                 effect="solid"
-                place="right"
+                place="right,top"
                 event="neverEmit"
                 eventOff="neverEmitToo"
                 border
