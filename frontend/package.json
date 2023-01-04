@@ -1,66 +1,66 @@
 {
-    "name": "frontend",
-    "version": "0.1.0",
-    "private": true,
-    "proxy": "http://localhost:3001",
-    "dependencies": {
-        "@emotion/react": "^11.10.5",
-        "@emotion/styled": "^11.10.5",
-        "@mui/icons-material": "^5.10.9",
-        "@mui/material": "^5.10.11",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
-        "axios": "^1.1.3",
-        "formik": "^2.2.9",
-        "nanoid": "^4.0.0",
-        "react": "^17.0.2",
-        "react-chat-elements": "^12.0.5",
-        "react-dom": "^17.0.2",
-        "react-helmet": "^6.1.0",
-        "react-icons": "^4.6.0",
-        "react-loader-spinner": "^5.3.4",
-        "react-query": "^3.39.2",
-        "react-router-dom": "^6.4.2",
-        "react-scripts": "5.0.1",
-        "react-tooltip": "^4.4.3",
-        "socket.io-client": "^4.5.3",
-        "web-vitals": "^2.1.4",
-        "yup": "^0.32.11"
-    },
-    "scripts": {
-        "start": "react-app-rewired start",
-        "build": "react-app-rewired build && rm -rf ../backend/static/build && cp -R ./build ../backend/static/build",
-        "test": "react-app-rewired test",
-        "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 react-app-rewired build",
-        "format": "npx prettier --write ."
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "autoprefixer": "^10.4.13",
-        "compression-webpack-plugin": "^10.0.0",
-        "cross-env": "^7.0.3",
-        "postcss": "^8.4.18",
-        "prettier": "2.7.1",
-        "react-app-rewired": "^2.2.1",
-        "tailwindcss": "^3.2.1",
-        "webpack-bundle-analyzer": "^4.7.0"
-    }
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.11",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.1.3",
+    "formik": "^2.2.9",
+    "nanoid": "^4.0.0",
+    "react": "^17.0.2",
+    "react-chat-elements": "^12.0.5",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.6.0",
+    "react-loader-spinner": "^5.3.4",
+    "react-query": "^3.39.2",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "5.0.1",
+    "react-tooltip": "^4.4.3",
+    "socket.io-client": "^4.5.3",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build && rm -rf ../backend/static/build && cp -R ./build ../backend/static/build",
+    "test": "react-app-rewired test",
+    "analyze": "cross-env REACT_APP_INTERACTIVE_ANALYZE=1 react-app-rewired build",
+    "format": "npx prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "compression-webpack-plugin": "^10.0.0",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.18",
+    "prettier": "2.7.1",
+    "react-app-rewired": "^2.2.1",
+    "tailwindcss": "^3.2.1",
+    "webpack-bundle-analyzer": "^4.7.0"
+  }
 }

@@ -12,6 +12,8 @@ const config = require('./utils/config.js');
 const MongoStore = require('connect-mongo');
 const path = require('path');
 
+//manage with gzipped files
+
 app.use(express.json({ limit: '10kb' }));
 
 const mongoUrl = config.MONGODB_URI;
@@ -52,9 +54,23 @@ app.use('/api/user', userRouter);
 app.use('/api/chats', chatRouter);
 app.use('/api/login', loginRouter);
 
+app.get('*.js', (request, response, next) => {
+    request.url = `${request.url}.gz`;
+    response.set('Content-Encoding', 'gzip');
+    response.set('Content-Type', 'text/javascript');
+    next();
+});
+
+app.get('*.css', (request, response, next) => {
+  request.url = `${request.url}.gz`;
+  response.set('Content-Encoding', 'gzip');
+  response.set('Content-Type', 'text/css');
+  next();
+});
+
 app.use(express.static('static/build'));
 
-app.get('*', (request, response, next) => {
+app.get('*', (request, response) => {
     response.sendFile(path.resolve(__dirname, 'static/build/index.html'));
 });
 
